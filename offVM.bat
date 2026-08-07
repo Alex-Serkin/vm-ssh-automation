@@ -1,0 +1,12 @@
+@echo off
+echo [INFO] Shutting down virtual machine gracefully.
+"C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" controlvm "UbuntuLocal" acpipowerbutton
+
+if %errorlevel% equ 0 (
+    echo [OK] Shutdown signal sent.
+    echo [INFO] The VM will shut down gracefully, may take a few seconds.
+) else (
+    echo [ERROR] Failed to send shutdown signal.
+    echo [ERROR] Please check if VM name is correct and VirtualBox is installed.
+    pause
+)
