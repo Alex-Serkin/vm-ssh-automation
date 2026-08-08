@@ -1,7 +1,9 @@
 @echo off
 
 :check_running
-echo [INFO] Checking if virtual machine is already running...
+echo [INFO] Checking if virtual machine is already running.
+REM !!! ВНИМАНИЕ !!! "UbuntuLocal" заменить на название вашей ВМ 
+REM !!! АTTENTION !!!"UbuntuLocal" replace with the name of your VM
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" showvminfo "UbuntuLocal" | findstr /C:"State: running" /C:"State: paused" > nul
 
 if %errorlevel% equ 0 (
